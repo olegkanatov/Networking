@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ax1-nr-9ZQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -16,54 +16,150 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gdu-Qf-AAa">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Download an Image" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vjh-q0-o3g">
-                                <rect key="frame" x="20" y="44" width="374" height="818"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="45"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hr-qH-5yY">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alt-Zt-fKI">
+                                <rect key="frame" x="20" y="125" width="374" height="160"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="xKq-8F-jrf"/>
+                                </constraints>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Press To Download Image"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Press To Download Image">
+                                            <attributes>
+                                                <font key="NSFont" size="24" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
                                 <connections>
-                                    <action selector="getImagePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sjp-oj-uJ4"/>
+                                    <segue destination="Ezl-6X-9JG" kind="show" id="EZ4-8d-9Su"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="1EF-42-5XL">
-                                <rect key="frame" x="197" y="438" width="20" height="20"/>
-                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4v-TE-hgP">
+                                <rect key="frame" x="20" y="566" width="374" height="160"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="BVp-EN-iw1"/>
+                                </constraints>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Press To Download Image"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="POST">
+                                            <attributes>
+                                                <font key="NSFont" size="24" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="postRequest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hTC-dd-9gN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gly-V1-gvP">
+                                <rect key="frame" x="20" y="350" width="374" height="160"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="160" id="e0J-NA-ylO"/>
+                                </constraints>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Press To Download Image"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="GET">
+                                            <attributes>
+                                                <font key="NSFont" size="24" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="getRequest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gN2-Hi-qwo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Gdu-Qf-AAa" secondAttribute="bottom" id="14F-Cs-9c1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vjh-q0-o3g" secondAttribute="trailing" constant="20" id="2Ur-lx-3vF"/>
-                            <constraint firstItem="1EF-42-5XL" firstAttribute="centerX" secondItem="Gdu-Qf-AAa" secondAttribute="centerX" id="87o-UA-1l7"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8hr-qH-5yY" secondAttribute="trailing" id="8mB-nd-efy"/>
-                            <constraint firstItem="1EF-42-5XL" firstAttribute="centerY" secondItem="Gdu-Qf-AAa" secondAttribute="centerY" id="CV6-ny-ybS"/>
-                            <constraint firstItem="Gdu-Qf-AAa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SpV-ZG-D3b"/>
-                            <constraint firstItem="Vjh-q0-o3g" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XYr-2g-PGh"/>
-                            <constraint firstItem="8hr-qH-5yY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZYx-FC-pc6"/>
-                            <constraint firstItem="8hr-qH-5yY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zbc-ae-C5q"/>
-                            <constraint firstItem="Gdu-Qf-AAa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aGK-AK-Dv1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Vjh-q0-o3g" secondAttribute="bottom" id="f8h-IS-lQe"/>
-                            <constraint firstItem="Gdu-Qf-AAa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fJg-hz-dfi"/>
-                            <constraint firstItem="Vjh-q0-o3g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hku-KN-WxP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8hr-qH-5yY" secondAttribute="bottom" id="oeE-z8-IaH"/>
+                            <constraint firstItem="Gly-V1-gvP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="04Y-so-2L1"/>
+                            <constraint firstItem="Gly-V1-gvP" firstAttribute="top" secondItem="alt-Zt-fKI" secondAttribute="bottom" constant="65" id="2wr-PD-bas"/>
+                            <constraint firstItem="Gly-V1-gvP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="350" id="3CK-6H-KNs"/>
+                            <constraint firstItem="Gly-V1-gvP" firstAttribute="leading" secondItem="alt-Zt-fKI" secondAttribute="leading" id="bEK-0h-blJ"/>
+                            <constraint firstItem="Gly-V1-gvP" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="co0-hI-tPn"/>
+                            <constraint firstItem="Gly-V1-gvP" firstAttribute="leading" secondItem="C4v-TE-hgP" secondAttribute="leading" id="edH-g4-Osp"/>
+                            <constraint firstItem="Gly-V1-gvP" firstAttribute="trailing" secondItem="alt-Zt-fKI" secondAttribute="trailing" id="fA8-Xm-os0"/>
+                            <constraint firstItem="C4v-TE-hgP" firstAttribute="top" secondItem="Gly-V1-gvP" secondAttribute="bottom" constant="56" id="gXK-gu-WfR"/>
+                            <constraint firstItem="Gly-V1-gvP" firstAttribute="trailing" secondItem="C4v-TE-hgP" secondAttribute="trailing" id="uRf-PC-TmQ"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="activityIndicator" destination="1EF-42-5XL" id="Sb4-OD-trA"/>
-                        <outlet property="getImageButton" destination="8hr-qH-5yY" id="JZa-5b-Oiu"/>
-                        <outlet property="imageView" destination="Gdu-Qf-AAa" id="gX0-lx-Z04"/>
-                        <outlet property="label" destination="Vjh-q0-o3g" id="ZMH-yh-TXT"/>
-                    </connections>
+                    <navigationItem key="navigationItem" prompt="Controls" id="nzC-n8-4D2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="886.95652173913049" y="53.571428571428569"/>
+        </scene>
+        <!--Image-->
+        <scene sceneID="vtl-3u-EgU">
+            <objects>
+                <viewController id="Ezl-6X-9JG" customClass="ImageViewController" customModule="Networking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7eK-1h-kp8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xcu-6q-VQp">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="gkz-S0-E9V">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="469-BI-KT3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gkz-S0-E9V" firstAttribute="centerX" secondItem="xcu-6q-VQp" secondAttribute="centerX" id="1In-xp-7zV"/>
+                            <constraint firstItem="xcu-6q-VQp" firstAttribute="top" secondItem="469-BI-KT3" secondAttribute="top" id="ffC-Op-w5h"/>
+                            <constraint firstItem="469-BI-KT3" firstAttribute="bottom" secondItem="xcu-6q-VQp" secondAttribute="bottom" constant="-34" id="nCi-vV-0WG"/>
+                            <constraint firstItem="469-BI-KT3" firstAttribute="trailing" secondItem="xcu-6q-VQp" secondAttribute="trailing" id="r6N-Vk-KcQ"/>
+                            <constraint firstItem="gkz-S0-E9V" firstAttribute="centerY" secondItem="xcu-6q-VQp" secondAttribute="centerY" constant="-44" id="tlt-Mp-bZ0"/>
+                            <constraint firstItem="xcu-6q-VQp" firstAttribute="leading" secondItem="469-BI-KT3" secondAttribute="leading" id="y6J-9J-FbJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Image" id="SBu-rX-zcx"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="gkz-S0-E9V" id="DmA-vF-ITF"/>
+                        <outlet property="imageView" destination="xcu-6q-VQp" id="u0I-VO-heC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0wC-Lr-CCj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1685.5072463768117" y="53.571428571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JwC-h6-ipW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ax1-nr-9ZQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="noQ-yK-3RM">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jEz-q8-OTP">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4VB-Ic-J2G"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="COI-Lj-PQh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-23.188405797101453" y="53.571428571428569"/>
         </scene>
