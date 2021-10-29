@@ -1,18 +1,18 @@
 //
-//  ViewController.swift
+//  NetworkManager.swift
 //  Networking
 //
-//  Created by Oleg Kanatov on 28.10.21.
+//  Created by Oleg Kanatov on 29.10.21.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class NetworkManager {
     
-    @IBAction func getRequest(_ sender: Any) {
+    static func getRequest(url: String) {
         
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
-                
+        guard let url = URL(string: url) else { return }
+        
         let session = URLSession.shared
         session.dataTask(with: url) { data, responce, error in
             
@@ -29,9 +29,9 @@ class ViewController: UIViewController {
         }.resume()
     }
     
-    @IBAction func postRequest(_ sender: Any) {
+    static func postRequest(url: String) {
         
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
+        guard let url = URL(string: url) else { return }
         
         let userData = ["Course": "Networking", "Lesson": "GET and POST Requests"]
         
@@ -59,7 +59,37 @@ class ViewController: UIViewController {
         }.resume()
     }
     
+    static func downloadImage(url: String, complition: @escaping (_ image: UIImage)->()) {
+        
+        guard let url = URL(string: url) else { return }
+        
+        let session = URLSession.shared
+        session.dataTask(with: url) { (data, response, error) in
+            if let data = data, let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    complition(image)
+                }
+            }
+        }.resume()
+    }
     
-    
+    static func fetchData(url: String, complition: @escaping (_ courses: [Course])->()) {
+        
+        guard let url = URL(string: url) else { return }
+        
+        URLSession.shared.dataTask(with: url) { data, _, _ in
+            
+            guard let data = data else { return }
+            
+            do {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let courses = try decoder.decode([Course].self, from: data)
+                complition(courses)
+            } catch let error {
+                print("Error serialization json", error)
+            }
+            
+        }.resume()
+    }
 }
-

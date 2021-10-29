@@ -8,46 +8,29 @@
 import UIKit
 
 class CoursesViewController: UIViewController {
-
+    
     private var courses = [Course]()
     private var courseName: String?
     private var courseUrl: String?
+    private let url = "https://swiftbook.ru//wp-content/uploads/api/api_courses"
     
     @IBOutlet var tableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         fetchData()
     }
     
     func fetchData() {
         
-//        let jsonUrlString = "https://swiftbook.ru//wp-content/uploads/api/api_course"
-        let jsonUrlString = "https://swiftbook.ru//wp-content/uploads/api/api_courses"
-//        let jsonUrlString = "https://swiftbook.ru//wp-content/uploads/api/api_website_description"
-//        let jsonUrlString = "https://swiftbook.ru//wp-content/uploads/api/api_missing_or_wrong_fields"
-        
-        guard let url = URL(string: jsonUrlString) else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, responce, error in
-            
-            guard let data = data else { return }
-            
-            do {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                self.courses = try decoder.decode([Course].self, from: data)
-                
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            } catch let error {
-                print("Error serialization json", error)
+        NetworkManager.fetchData(url: url) { courses in
+            self.courses = courses
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
-            
-        }.resume()
+        }
     }
     
     private func configureCell(cell: TableViewCell, for indexPAth: IndexPath) {
@@ -73,9 +56,12 @@ class CoursesViewController: UIViewController {
         }
     }
     
-
+    
+    //-------------------------------------------------
     // MARK: - Navigation
-
+    //-------------------------------------------------
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let webViewController = segue.destination as! WebViewController
@@ -87,7 +73,11 @@ class CoursesViewController: UIViewController {
     }
 }
 
-// MARK: Table View Data Source
+
+//-------------------------------------------------
+// MARK: - Table View Data Source
+//-------------------------------------------------
+
 
 extension CoursesViewController: UITableViewDataSource {
     
@@ -105,7 +95,11 @@ extension CoursesViewController: UITableViewDataSource {
     }
 }
 
-// MARK: Table View Delegate
+
+//-------------------------------------------------
+// MARK: - Table View Delegate
+//-------------------------------------------------
+
 
 extension CoursesViewController: UITableViewDelegate {
     
