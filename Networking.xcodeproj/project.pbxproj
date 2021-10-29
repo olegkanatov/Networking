@@ -21,6 +21,7 @@
 		19C250D3272C07570065F010 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C250D2272C07570065F010 /* MainViewController.swift */; };
 		19C250D5272C07650065F010 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C250D4272C07650065F010 /* CollectionViewCell.swift */; };
 		19C250D7272C0A4F0065F010 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C250D6272C0A4F0065F010 /* NetworkManager.swift */; };
+		19C250D9272C14C60065F010 /* ImageProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C250D8272C14C60065F010 /* ImageProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		19C250D2272C07570065F010 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		19C250D4272C07650065F010 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		19C250D6272C0A4F0065F010 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		19C250D8272C14C60065F010 /* ImageProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProperties.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				199C1EA2272AB94A00A58B5B /* ImageViewController.swift */,
 				199C1EA4272ACCA300A58B5B /* CoursesViewController.swift */,
 				199C1EAC272AD17900A58B5B /* Course.swift */,
+				19C250D8272C14C60065F010 /* ImageProperties.swift */,
 				199C1EAE272AD46A00A58B5B /* WebsiteDescription.swift */,
 				199C1EA6272ACD9200A58B5B /* TableViewCell.swift */,
 				199C1EA8272ACDAF00A58B5B /* WebViewController.swift */,
@@ -170,6 +173,7 @@
 				199C1EA7272ACD9200A58B5B /* TableViewCell.swift in Sources */,
 				199C1EA9272ACDAF00A58B5B /* WebViewController.swift in Sources */,
 				199C1EA5272ACCA300A58B5B /* CoursesViewController.swift in Sources */,
+				19C250D9272C14C60065F010 /* ImageProperties.swift in Sources */,
 				199C1E91272AA02600A58B5B /* SceneDelegate.swift in Sources */,
 				19C250D3272C07570065F010 /* MainViewController.swift in Sources */,
 				19C250D5272C07650065F010 /* CollectionViewCell.swift in Sources */,
